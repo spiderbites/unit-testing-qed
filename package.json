@@ -1,0 +1,13 @@
+{
+  "name": "unit-testing-intro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Josh Zucker <josh@twg.io>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}

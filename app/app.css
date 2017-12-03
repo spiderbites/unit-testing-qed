@@ -1,0 +1,21 @@
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: inline-block;
+}
+
+.box {
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  background-color: #ffbdb1;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Box from './box'
 import Row from './row'
 import './app.css'
-import { down, up, left, right } from './functions'
+import { down, up, left, right, weHaveAWeiner } from './functions'
 import { SIZE } from './constants'
 
 class App extends Component {
@@ -81,10 +81,13 @@ class App extends Component {
     const { x: prevX, y: prevY } = this.state.jp
     newBoard[prevX][prevY] = undefined
     newBoard[x][y] = 'jp'
-    this.setState({
-      board: newBoard,
-      jp: { x, y }
-    })
+    this.setState(
+      {
+        board: newBoard,
+        jp: { x, y }
+      },
+      this.checkWinner
+    )
   }
 
   getRandomCoords() {
@@ -93,19 +96,11 @@ class App extends Component {
     return [x, y]
   }
 
-  weHaveAWeiner() {
-    return (
-      this.state.jp.x !== undefined &&
-      this.state.jp.x === this.state.goal.x &&
-      this.state.jp.y === this.state.goal.y
-    )
-  }
-
-  componentDidUpdate() {
-    if (this.weHaveAWeiner()) {
+  checkWinner() {
+    if (weHaveAWeiner(this.state.jp, this.state.goal)) {
       setTimeout(() => {
-        alert('You did it buddy')
         this.reset()
+        alert('You did it buddy')
       }, 100)
     }
   }

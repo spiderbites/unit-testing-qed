@@ -32,4 +32,4 @@ const weHaveAWeiner = (jp, goal) => {
   return jp.x === goal.x && jp.y === goal.y
 }
 
-export { down, up, left, right }
+export { down, up, left, right, weHaveAWeiner }

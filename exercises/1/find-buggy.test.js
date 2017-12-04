@@ -11,7 +11,7 @@ describe('find', () => {
     expect(result).toBe(11)
   })
 
-  test.fail('can find a middle item in an array', () => {
+  test('can find a middle item in an array', () => {
     // add test here
   })
 

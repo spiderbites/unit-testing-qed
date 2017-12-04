@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Box from './box'
-import Row from './row'
+import Box from './components/box'
+import Row from './components/row'
 import './app.css'
-import { down, up, left, right, weHaveAWeiner } from './functions'
-import { SIZE } from './constants'
+import { down, up, left, right, checkWin } from './functions'
+import { MAX_POSITION } from './constants'
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +27,9 @@ class App extends Component {
   }
 
   initBoard() {
-    return Array.from({ length: SIZE }, () => Array.from({ length: SIZE }))
+    return Array.from({ length: MAX_POSITION + 1 }, () =>
+      Array.from({ length: MAX_POSITION + 1 })
+    )
   }
 
   reset() {
@@ -40,30 +42,14 @@ class App extends Component {
 
   keydown(e) {
     if (e.key === 'ArrowDown') {
-      this.moveDown()
+      this.moveJp(down(this.state.jp))
     } else if (e.key === 'ArrowRight') {
-      this.moveRight()
+      this.moveJp(right(this.state.jp))
     } else if (e.key === 'ArrowLeft') {
-      this.moveLeft()
+      this.moveJp(left(this.state.jp))
     } else if (e.key === 'ArrowUp') {
-      this.moveUp()
+      this.moveJp(up(this.state.jp))
     }
-  }
-
-  moveDown() {
-    this.moveJp(down(this.state.jp))
-  }
-
-  moveUp() {
-    this.moveJp(up(this.state.jp))
-  }
-
-  moveRight() {
-    this.moveJp(right(this.state.jp))
-  }
-
-  moveLeft() {
-    this.moveJp(left(this.state.jp))
   }
 
   randomlyPlace(thing) {
@@ -91,13 +77,13 @@ class App extends Component {
   }
 
   getRandomCoords() {
-    const x = Math.floor(Math.random() * (SIZE - 1))
-    const y = Math.floor(Math.random() * (SIZE - 1))
+    const x = Math.floor(Math.random() * MAX_POSITION)
+    const y = Math.floor(Math.random() * MAX_POSITION)
     return [x, y]
   }
 
   checkWinner() {
-    if (weHaveAWeiner(this.state.jp, this.state.goal)) {
+    if (checkWin(this.state.jp, this.state.goal)) {
       setTimeout(() => {
         this.reset()
         alert('You did it buddy')

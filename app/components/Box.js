@@ -1,5 +1,5 @@
 import React from 'react'
-import jp from './jp3.gif'
+import jp from '../assets/jp3.gif'
 
 const Box = ({ children }) => {
   return (

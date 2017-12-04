@@ -1,1 +1,1 @@
-export const SIZE = 6
+export const MAX_POSITION = 5

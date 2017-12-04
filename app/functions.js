@@ -1,4 +1,4 @@
-import { SIZE } from './constants'
+import { MAX_POSITION } from './constants'
 
 const down = ({ x, y }) => {
   return {
@@ -28,8 +28,8 @@ const left = ({ x, y }) => {
   }
 }
 
-const weHaveAWeiner = (jp, goal) => {
+const checkWin = (jp, goal) => {
   return jp.x === goal.x && jp.y === goal.y
 }
 
-export { down, up, left, right, weHaveAWeiner }
+export { down, up, left, right, checkWin }

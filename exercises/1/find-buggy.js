@@ -1,3 +1,6 @@
+// This function has a bug! Complete the tests in the find-buggy.test.js file
+// to find the bug, then come back here and make everything go from 🚨 to 💚
+
 /**
  * Find and return the first element in an array for which
  * the given function returns a truthy value.

@@ -11,7 +11,7 @@ describe('game functions', () => {
   })
 
   describe('down', () => {
-    it.only("should increase jp's y co-ordinate by one", () => {
+    it("should increase jp's y co-ordinate by one", () => {
       const oldY = jp.y
       const newPosition = down(jp)
       const newY = newPosition.y

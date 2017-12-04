@@ -40,9 +40,9 @@ Ensure you have Node version >= 6 installed
 v6.0.0 # at least 6.0.0 is required
 ```
 
-Ensure you have a javascript package manager such as `npm` or `yarn` installed. You can use either to install the application-specific dependencies.
+Ensure you have a javascript package manager such as `npm` or `yarn` installed.
 
-To check you have one installed, try:
+The version numbers don't matter so much, just ensure that you have something installed.
 ```bash
 > npm -v
 5.5.1
@@ -52,13 +52,13 @@ To check you have one installed, try:
 
 Once that's out of the way, install the application specific dependencies and run the application.  You can use either `npm` or `yarn` to run these commands.  I'll use yarn.
 
-```
+```bash
 > yarn install
 ```
 
 To start the application:
 
-```
+```bash
 > yarn start
 ```
 
@@ -80,12 +80,13 @@ You can find those files here:
 ```
 
 Run the tests now and check the output in the console.
-```
+```bash
 > yarn test
 ```
 
 You may find it useful to have `jest`, the test framework we are using, "watch" your code and continually run your tests as you make changes (you can press `q` to quit at any time):
-```
+
+```bash
 > yarn test-watch // or npm run test-watch
 ```
 
